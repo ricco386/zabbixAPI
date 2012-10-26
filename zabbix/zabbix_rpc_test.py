@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import optparse
 import sys
-import traceback
 from getpass import getpass
 from zabbix_api import ZabbixAPI, ZabbixAPIException
 
@@ -18,6 +17,8 @@ def get_options():
             dest="username", help="Username (Will prompt if not given)")
     parser.add_option("-p", "--password", action="store", type="string", \
             dest="password", help="Password (Will prompt if not given)")
+    parser.add_option("-l", "--log_level", action="store", type="int", \
+            dest="log_level", help="Log Level (Default value 30)")
 
     options, args = parser.parse_args()
 
@@ -34,6 +35,9 @@ def get_options():
     if not options.username and not options.password:
         show_help(parser)
 
+    if not options.log_level:
+        options.log_level = 30
+
     return options, args
 
 def show_help(p):
@@ -48,7 +52,7 @@ def errmsg(msg):
 if  __name__ == "__main__":
     options, args = get_options()
 
-    zapi = ZabbixAPI(server=options.server,log_level=3)
+    zapi = ZabbixAPI(server=options.server,log_level=options.log_level)
 
     try:
         zapi.login(options.username, options.password)
