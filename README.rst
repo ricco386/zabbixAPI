@@ -1,4 +1,5 @@
-# Zabbix #
+Zabbix
+######
 
 This is an implementation of the Zabbix API in Python.
 Please note that the Zabbix API is still in a draft state, 
@@ -9,15 +10,17 @@ be found on the wiki.
 
 Zabbix 1.8 and 2.0 are supported.
 
-## Documentation ##
+Documentation
+-------------
 
 * http://www.zabbix.com/wiki/doc/api
 * http://www.zabbix.com/documentation/2.0/manual/appendix/api/api
 * http://www.zabbix.com/forum/showthread.php?t=15218
 
-## License ##
+License
+-------
 
-LGPL 2.1   http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+`LGPL 2.1 <http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>`
 
 Zabbix API Python Library.
 
